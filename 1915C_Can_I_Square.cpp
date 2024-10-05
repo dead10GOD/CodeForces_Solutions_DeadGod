@@ -1,5 +1,6 @@
-#include "bits/stdc++.h"
+#include "bits/stdc++.h"	
 using namespace std;
+#define FAST_IO (ios_base:: sync_with_stdio(false),cin.tie(NULL));
 #define int long long
 #define pb push_back
 #define endl '\n'
@@ -14,29 +15,21 @@ const int MOD = 1e9 + 7;
 const int INF = LLONG_MAX >> 1;
 signed main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    int t, n, i0, i1, o0, o1;
-    string s1, s2;
+    FAST_IO
+    int t, n, ele, sum;
     cin >> t;
     while (t--)
     {
         cin >> n;
-        cin >> s1;
-        cin >> s2;
-        i0 = i1 = o0 = o1 = 0;
+        sum = 0;
         for (int i = 0; i < n; i++)
         {
-            if (s1[i] == '0')
-                i0++;
-            if (s1[i] == '1')
-                i1++;
-            if (s2[i] == '0')
-                o0++;
-            if (s2[i] == '1')
-                o1++;
+            cin >> ele;
+            sum += ele;
         }
-        
+        int a = sqrt(sum);
+        (a * a == sum) ? cout << "YES" : cout << "NO";
+        cout << endl;
     }
     return 0;
 }
